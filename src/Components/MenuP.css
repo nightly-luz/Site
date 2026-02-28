@@ -1,0 +1,183 @@
+/* ===== MENU SUPERIOR ===== */
+.MenuSuperior {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+/* ===== LINKS ===== */
+.navLinks {
+  display: flex;
+  gap: 25px;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+/* Linha animada embaixo */
+.navLinks a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: hotpink;
+  transition: width 0.3s ease;
+}
+
+.navLinks a:hover {
+  color: hotpink;
+}
+
+.navLinks a:hover::after {
+  width: 100%;
+}
+
+/* ===== BOTÃO DE MÚSICA ===== */
+.musicButton {
+  padding: 8px 18px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(45deg, rgb(73, 6, 228), rgb(255, 146, 4));
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.musicButton:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px hotpink;
+}
+
+/* ===== RESPONSIVO TABLET ===== */
+@media (max-width: 1024px) {
+  .MenuSuperior {
+    padding: 15px 25px;
+  }
+
+  .navLinks {
+    gap: 20px;
+  }
+
+  .navLinks a {
+    font-size: 1rem;
+  }
+
+  .musicButton {
+    padding: 7px 14px;
+    font-size: 0.95rem;
+  }
+}
+
+/* ===== RESPONSIVO CELULARES ===== */
+@media (max-width: 768px) {
+  .MenuSuperior {
+    padding: 15px 15px;
+  }
+
+  .navLinks {
+    gap: 15px;
+  }
+
+  .navLinks a {
+    font-size: 0.9rem;
+  }
+
+  .musicButton {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+/* ===== RESPONSIVO CELULARES PEQUENOS (MENU LATERAL) ===== */
+@media (max-width: 480px) {
+/* ===== BOTÃO HAMBURGUER ===== */
+.hamburgerButton {
+  display: none; /* invisível por padrão (desktop e tablet) */
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 20000;
+  font-size: 2rem;
+  background: none; /* transparente */
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Mostra o hamburguer apenas no celular */
+@media (max-width: 480px) {
+  .hamburgerButton {
+    display: block; /* visível no celular */
+  }
+}
+
+  /* Menu lateral fixo */
+  .MenuSuperior {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 70px 20px 20px 20px; /* top padding para o hamburguer */
+    width: 240px;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease, background 0.3s ease;
+    z-index: 10000;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+
+  /* Sidebar ativa */
+  .MenuSuperior.sidebarOpen {
+    transform: translateX(0);
+  }
+
+  /* Links e botão de música empurrados para baixo */
+  .navLinks {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .navLinks a {
+    font-size: 1rem;
+    color: white;
+    padding: 8px 0;
+  }
+
+  .navLinks a:hover {
+    transform: translateX(5px);
+  }
+
+  .musicButton {
+    width: 90%;
+    margin-top: 30px;
+    font-size: 0.95rem;
+    align-self: center;
+    padding: 10px 0;
+  }
+}

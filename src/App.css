@@ -1,0 +1,49 @@
+/* ===== RESET SUAVE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  background-size: 500% 500%;
+}
+
+/* ===== FUNDO GLOBAL ===== */
+.tudo {
+  min-height: 100vh; /* garante altura total da tela */
+  display: flex;
+  flex-direction: column; /* mantém a coluna em mobile */
+  justify-content: center; /* centraliza verticalmente */
+  align-items: center; /* centraliza horizontalmente */
+
+  background: linear-gradient(-60deg, #f7c967, #df934d, #9a73e2, #7b2ba8);
+  animation: backgroundFlow 12s ease infinite;
+}
+
+/* ===== ANIMAÇÃO DE FUNDO ===== */
+@keyframes backgroundFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== RESPONSIVO CELULARES ===== */
+@media (max-width: 480px) {
+  .tudo {
+    min-height: 100vh;
+    padding: 10px; /* só para garantir espaçamento interno */
+  }
+}
+
+.hamburgerButton {
+  display: none; /* invisível por padrão (desktop e tablet) */
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 20000;
+  font-size: 2rem;
+  background: none; /* transparente */
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}

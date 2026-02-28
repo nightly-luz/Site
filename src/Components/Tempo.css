@@ -1,0 +1,195 @@
+/* ===== BLOCO DE TEMPO ===== */
+.tempo {
+  max-width: 750px;
+  width: 100%;
+  padding: 35px;
+
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 25px;
+  box-shadow: 0 10px 40px rgba(255, 105, 180, 0.3);
+
+  text-align: center;
+  color: white;
+
+  animation: fadeUp 1.5s ease forwards;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+/* TÍTULO */
+.tempo h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 15px rgb(255, 255, 255);
+  animation: glow 2.5s ease-in-out infinite alternate;
+}
+
+/* BRILHO NO TÍTULO */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px rgb(255, 255, 255);
+  }
+
+  to {
+    text-shadow: 0 0 25px rgb(255, 255, 255);
+  }
+}
+
+/* CONTADOR CENTRALIZADO */
+.contador {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* CARDS DO CONTADOR */
+.contador div {
+  min-width: 80px;
+  padding: 25px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 40px rgba(255, 105, 180, 0.3);
+  transition: 0.3s ease;
+  box-sizing: border-box;
+}
+
+.contador div:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgb(255, 255, 255);
+}
+
+/* NÚMEROS */
+.contador span {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 10px rgb(255, 255, 255);
+}
+
+/* LABELS */
+.contador p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 5px;
+}
+
+/* FRASE EXTRA */
+.fraseExtra {
+  margin-top: 30px;
+  font-style: italic;
+  opacity: 0.9;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 8px rgb(255, 255, 255);
+}
+
+/* ANIMAÇÃO DE ENTRADA */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RODAPÉ CENTRAL */
+.rodapeCentro {
+  margin: 20px auto 0;
+  text-align: center;
+}
+
+/* ===== RESPONSIVO TABLET ===== */
+@media (max-width: 1024px) {
+  .tempo {
+    padding: 30px;
+  }
+
+  .tempo h2 {
+    font-size: 1.8rem;
+  }
+
+  .contador div {
+    min-width: 70px;
+    padding: 20px;
+  }
+
+  .contador span {
+    font-size: 1.8rem;
+  }
+
+  .contador p {
+    font-size: 0.85rem;
+  }
+
+  .fraseExtra {
+    font-size: 0.95rem;
+  }
+}
+
+/* ===== RESPONSIVO CELULARES ===== */
+@media (max-width: 768px) {
+  .tempo {
+    padding: 25px;
+  }
+
+  .tempo h2 {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+  }
+
+  .contador div {
+    min-width: 60px;
+    padding: 18px;
+  }
+
+  .contador span {
+    font-size: 1.5rem;
+  }
+
+  .contador p {
+    font-size: 0.8rem;
+  }
+
+  .fraseExtra {
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== RESPONSIVO CELULARES PEQUENOS ===== */
+@media (max-width: 480px) {
+  .tempo {
+    padding: 20px;
+  }
+
+  .tempo h2 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  .contador div {
+    min-width: 50px;
+    padding: 15px;
+  }
+
+  .contador span {
+    font-size: 1.3rem;
+  }
+
+  .contador p {
+    font-size: 0.75rem;
+  }
+
+  .fraseExtra {
+    font-size: 0.85rem;
+    margin-top: 20px;
+  }
+}

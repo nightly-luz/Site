@@ -1,0 +1,55 @@
+/* ===== RODAPÉ ===== */
+.rodape {
+  max-width: 780px;
+  width: 100%;
+  padding: 20px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 25px;
+  margin-top: 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.rodape footer {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #fff0f5;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+/* ===== RESPONSIVO TABLET ===== */
+@media (max-width: 1024px) {
+  .rodape {
+    padding: 18px;
+  }
+
+  .rodape footer {
+    font-size: 0.95rem;
+  }
+}
+
+/* ===== RESPONSIVO CELULARES ===== */
+@media (max-width: 768px) {
+  .rodape {
+    padding: 15px;
+  }
+
+  .rodape footer {
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== RESPONSIVO CELULARES PEQUENOS ===== */
+@media (max-width: 480px) {
+  .rodape {
+    padding: 12px;
+    border-radius: 20px;
+  }
+
+  .rodape footer {
+    font-size: 0.85rem;
+  }
+}
