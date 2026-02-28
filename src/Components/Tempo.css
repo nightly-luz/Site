@@ -2,12 +2,12 @@
 .tempo {
   max-width: 750px;
   width: 100%;
-  padding: 35px;
+  padding: 40px;
 
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-  border-radius: 25px;
-  box-shadow: 0 10px 40px rgba(255, 105, 180, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  border-radius: 30px;
+  box-shadow: 0 15px 50px rgba(255, 105, 180, 0.35);
 
   text-align: center;
   color: white;
@@ -21,62 +21,89 @@
 /* TÍTULO */
 .tempo h2 {
   font-size: 2rem;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
   letter-spacing: 1px;
   text-shadow: 0 0 15px rgb(255, 255, 255);
   animation: glow 2.5s ease-in-out infinite alternate;
 }
 
-/* BRILHO NO TÍTULO */
-@keyframes glow {
-  from {
-    text-shadow: 0 0 10px rgb(255, 255, 255);
-  }
-
-  to {
-    text-shadow: 0 0 25px rgb(255, 255, 255);
-  }
-}
-
-/* CONTADOR CENTRALIZADO */
+/* ===== CRONÔMETRO PRINCIPAL ===== */
 .contador {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  align-items: center;
+  gap: 25px;
   flex-wrap: wrap;
+  margin-bottom: 35px;
 }
 
-/* CARDS DO CONTADOR */
+/* ===== CARD PRINCIPAL (dias, horas etc) ===== */
 .contador div {
-  min-width: 80px;
-  padding: 25px;
+  min-width: 90px;
+  padding: 28px;
   border-radius: 25px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
+
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(15px);
+
   box-shadow: 0 10px 40px rgba(255, 105, 180, 0.3);
   transition: 0.3s ease;
-  box-sizing: border-box;
 }
 
 .contador div:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgb(255, 255, 255);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 25px rgb(255, 255, 255);
 }
 
 /* NÚMEROS */
 .contador span {
   display: block;
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: bold;
-  color: rgb(255, 255, 255);
-  text-shadow: 0 0 10px rgb(255, 255, 255);
+  text-shadow: 0 0 12px rgb(255, 255, 255);
 }
 
 /* LABELS */
 .contador p {
   font-size: 0.9rem;
-  opacity: 0.8;
-  margin-top: 5px;
+  opacity: 0.85;
+  margin-top: 6px;
+}
+
+/* ===== MESES/ANOS CENTRALIZADO SOZINHO ===== */
+.tempo .tempoMaior {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.tempoMaior div {
+  padding: 30px 50px;
+  border-radius: 30px;
+
+  background: linear-gradient(135deg,
+      rgba(255, 105, 180, 0.4),
+      rgba(255, 182, 193, 0.3));
+
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 30px rgba(255, 105, 180, 0.6);
+  transition: 0.3s ease;
+}
+
+.tempoMaior div:hover {
+  transform: scale(1.05);
+}
+
+.tempoMaior span {
+  font-size: 2.8rem;
+  font-weight: bold;
+  text-shadow: 0 0 15px white;
+}
+
+.tempoMaior p {
+  margin-top: 8px;
+  font-size: 1rem;
+  letter-spacing: 1px;
 }
 
 /* FRASE EXTRA */
@@ -84,10 +111,19 @@
   margin-top: 30px;
   font-style: italic;
   opacity: 0.9;
-  text-shadow: 0 0 8px rgb(255, 255, 255);
 }
 
-/* ANIMAÇÃO DE ENTRADA */
+/* ANIMAÇÕES */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px white;
+  }
+
+  to {
+    text-shadow: 0 0 25px white;
+  }
+}
+
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -100,20 +136,10 @@
   }
 }
 
-/* RODAPÉ CENTRAL */
-.rodapeCentro {
-  margin: 20px auto 0;
-  text-align: center;
-}
-
-/* ===== RESPONSIVO TABLET ===== */
-@media (max-width: 1024px) {
-  .tempo {
-    padding: 30px;
-  }
-
-  .tempo h2 {
-    font-size: 1.8rem;
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .contador {
+    gap: 15px;
   }
 
   .contador div {
@@ -121,74 +147,48 @@
     padding: 20px;
   }
 
-  .contador span {
-    font-size: 1.8rem;
+  .tempoMaior div {
+    padding: 25px 35px;
   }
 
-  .contador p {
-    font-size: 0.85rem;
-  }
-
-  .fraseExtra {
-    font-size: 0.95rem;
+  .tempoMaior span {
+    font-size: 2.2rem;
   }
 }
 
-/* ===== RESPONSIVO CELULARES ===== */
-@media (max-width: 768px) {
-  .tempo {
-    padding: 25px;
-  }
-
-  .tempo h2 {
-    font-size: 1.6rem;
-    margin-bottom: 25px;
-  }
-
-  .contador div {
-    min-width: 60px;
-    padding: 18px;
-  }
-
-  .contador span {
-    font-size: 1.5rem;
-  }
-
-  .contador p {
-    font-size: 0.8rem;
-  }
-
-  .fraseExtra {
-    font-size: 0.9rem;
-  }
+.linha {
+  display: flex;
+  justify-content: center;
+  /* centraliza a linha horizontalmente */
+  gap: 25px;
+  /* espaço entre cards */
+  margin-bottom: 20px;
+  /* distância entre linhas */
 }
 
-/* ===== RESPONSIVO CELULARES PEQUENOS ===== */
-@media (max-width: 480px) {
-  .tempo {
-    padding: 20px;
-  }
+.linha div {
+  min-width: 90px;
+  padding: 28px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 10px 40px rgba(255, 105, 180, 0.3);
+  transition: 0.3s ease;
+}
 
-  .tempo h2 {
-    font-size: 1.4rem;
-    margin-bottom: 20px;
-  }
+.linha div:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 25px rgb(255, 255, 255);
+}
 
-  .contador div {
-    min-width: 50px;
-    padding: 15px;
-  }
+.linha span {
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 0 0 12px white;
+}
 
-  .contador span {
-    font-size: 1.3rem;
-  }
-
-  .contador p {
-    font-size: 0.75rem;
-  }
-
-  .fraseExtra {
-    font-size: 0.85rem;
-    margin-top: 20px;
-  }
+.linha p {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  opacity: 0.85;
 }
