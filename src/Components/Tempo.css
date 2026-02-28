@@ -18,7 +18,7 @@
   box-sizing: border-box;
 }
 
-/* TÍTULO */
+/* ===== TÍTULO ===== */
 .tempo h2 {
   font-size: 2rem;
   margin-bottom: 35px;
@@ -70,11 +70,13 @@
   margin-top: 6px;
 }
 
-/* ===== MESES/ANOS CENTRALIZADO SOZINHO ===== */
+/* ===== MESES/ANOS CENTRALIZADO ===== */
 .tempo .tempoMaior {
   margin-top: 10px;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .tempoMaior div {
@@ -113,7 +115,7 @@
   opacity: 0.9;
 }
 
-/* ANIMAÇÕES */
+/* ===== ANIMAÇÕES ===== */
 @keyframes glow {
   from {
     text-shadow: 0 0 10px white;
@@ -136,34 +138,89 @@
   }
 }
 
-/* RESPONSIVO */
+/* ===== RESPONSIVO ===== */
+@media (max-width: 1024px) {
+  .tempo {
+    padding: 30px;
+  }
+
+  .tempo h2 {
+    font-size: 1.8rem;
+  }
+
+  .contador div {
+    min-width: 80px;
+    padding: 22px;
+  }
+
+  .contador span {
+    font-size: 2rem;
+  }
+
+  .tempoMaior div {
+    padding: 25px 40px;
+  }
+
+  .tempoMaior span {
+    font-size: 2.4rem;
+  }
+
+  .tempoMaior p {
+    font-size: 0.95rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .tempo {
+    padding: 20px;
+  }
+
+  .tempo h2 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+
   .contador {
     gap: 15px;
   }
 
   .contador div {
     min-width: 70px;
-    padding: 20px;
+    padding: 18px;
+  }
+
+  .contador span {
+    font-size: 1.8rem;
+  }
+
+  .contador p {
+    font-size: 0.85rem;
   }
 
   .tempoMaior div {
-    padding: 25px 35px;
+    padding: 20px 30px;
   }
 
   .tempoMaior span {
-    font-size: 2.2rem;
+    font-size: 2rem;
+  }
+
+  .tempoMaior p {
+    font-size: 0.9rem;
+  }
+
+  .fraseExtra {
+    font-size: 0.85rem;
   }
 }
 
+/* ===== LINHAS ALTERNATIVAS ===== */
 .linha {
   display: flex;
   justify-content: center;
-  /* centraliza a linha horizontalmente */
   gap: 25px;
-  /* espaço entre cards */
   margin-bottom: 20px;
-  /* distância entre linhas */
+  flex-wrap: wrap;
 }
 
 .linha div {

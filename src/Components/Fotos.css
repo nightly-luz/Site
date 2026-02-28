@@ -3,6 +3,7 @@
   max-width: 750px;
   width: 100%;
   padding: 35px;
+  margin: 50px auto;
 
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(12px);
@@ -16,7 +17,6 @@
   position: relative;
   z-index: 1;
   box-sizing: border-box;
-  margin: 50px auto;
 }
 
 .fotosContainer h2 {
@@ -59,6 +59,21 @@
 
 .fotoCard:hover img {
   transform: scale(1.1);
+}
+
+/* ===== RESPONSIVO TELAS GRANDES ===== */
+@media (min-width: 1400px) {
+  .fotosContainer {
+    padding: 50px;
+  }
+
+  .fotosContainer h2 {
+    font-size: 2.2rem;
+  }
+
+  .fotoCard img {
+    height: 220px;
+  }
 }
 
 /* ===== RESPONSIVO TABLET ===== */
@@ -104,7 +119,7 @@
   }
 
   .cardsContainer {
-    grid-template-columns: 1fr; /* 1 coluna no celular */
+    grid-template-columns: 1fr; /* 1 coluna */
     gap: 15px;
   }
 

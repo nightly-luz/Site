@@ -14,6 +14,7 @@
   flex-direction: column; /* mantém a coluna em mobile */
   justify-content: center; /* centraliza verticalmente */
   align-items: center; /* centraliza horizontalmente */
+  padding: 20px;
 
   background: linear-gradient(-60deg, #f7c967, #df934d, #9a73e2, #7b2ba8);
   animation: backgroundFlow 12s ease infinite;
@@ -26,14 +27,7 @@
   100% { background-position: 0% 50%; }
 }
 
-/* ===== RESPONSIVO CELULARES ===== */
-@media (max-width: 480px) {
-  .tudo {
-    min-height: 100vh;
-    padding: 10px; /* só para garantir espaçamento interno */
-  }
-}
-
+/* ===== BOTÃO HAMBURGER ===== */
 .hamburgerButton {
   display: none; /* invisível por padrão (desktop e tablet) */
   position: fixed;
@@ -46,4 +40,24 @@
   color: white;
   cursor: pointer;
   transition: transform 0.3s ease;
+}
+
+/* ===== RESPONSIVO: CELULAR ===== */
+@media (max-width: 768px) {
+  .tudo {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .hamburgerButton {
+    display: block; /* visível em telas pequenas */
+  }
+}
+
+/* ===== RESPONSIVO: TELAS GRANDES ===== */
+@media (min-width: 1200px) {
+  .tudo {
+    padding: 50px;
+    font-size: 1.2rem; /* aumenta fontes em telas grandes */
+  }
 }

@@ -89,48 +89,12 @@
 }
 
 /* ===== RESPONSIVO CELULARES ===== */
-@media (max-width: 768px) {
-  .MenuSuperior {
-    padding: 15px 15px;
-  }
+@media (max-width: 1080px) {
 
-  .navLinks {
-    gap: 15px;
-  }
-
-  .navLinks a {
-    font-size: 0.9rem;
-  }
-
-  .musicButton {
-    padding: 6px 12px;
-    font-size: 0.85rem;
-  }
-}
-
-/* ===== RESPONSIVO CELULARES PEQUENOS (MENU LATERAL) ===== */
-@media (max-width: 480px) {
-/* ===== BOTÃO HAMBURGUER ===== */
-.hamburgerButton {
-  display: none; /* invisível por padrão (desktop e tablet) */
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  z-index: 20000;
-  font-size: 2rem;
-  background: none; /* transparente */
-  border: none;
-  color: white;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-/* Mostra o hamburguer apenas no celular */
-@media (max-width: 480px) {
+  /* ===== BOTÃO HAMBURGUER ===== */
   .hamburgerButton {
-    display: block; /* visível no celular */
+    display: block;
   }
-}
 
   /* Menu lateral fixo */
   .MenuSuperior {
@@ -138,7 +102,8 @@
     align-items: flex-start;
     justify-content: flex-start;
     gap: 20px;
-    padding: 70px 20px 20px 20px; /* top padding para o hamburguer */
+    padding: 70px 20px 20px 20px;
+    /* top padding para o hamburguer */
     width: 240px;
     height: 100vh;
     top: 0;
@@ -149,6 +114,123 @@
     z-index: 10000;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
+  }
+
+  /* Sidebar ativa */
+  .MenuSuperior.sidebarOpen {
+    transform: translateX(0);
+  }
+
+  /* Links e botão de música empurrados para baixo */
+  .navLinks {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .navLinks a {
+    font-size: 1rem;
+    color: white;
+    padding: 8px 0;
+  }
+
+  .navLinks a:hover {
+    transform: translateX(5px);
+  }
+
+  .musicButton {
+    width: 90%;
+    margin-top: 30px;
+    font-size: 0.95rem;
+    align-self: center;
+    padding: 10px 0;
+  }
+}
+@media (max-width: 768px) {
+
+  /* ===== BOTÃO HAMBURGUER ===== */
+  .hamburgerButton {
+    display: block;
+  }
+
+  /* Menu lateral fixo */
+  .MenuSuperior {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 70px 20px 20px 20px;
+    /* top padding para o hamburguer */
+    width: 240px;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease, background 0.3s ease;
+    z-index: 10000;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+
+  /* Sidebar ativa */
+  .MenuSuperior.sidebarOpen {
+    transform: translateX(0);
+  }
+
+  /* Links e botão de música empurrados para baixo */
+  .navLinks {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .navLinks a {
+    font-size: 1rem;
+    color: white;
+    padding: 8px 0;
+  }
+
+  .navLinks a:hover {
+    transform: translateX(5px);
+  }
+
+  .musicButton {
+    width: 90%;
+    margin-top: 30px;
+    font-size: 0.95rem;
+    align-self: center;
+    padding: 10px 0;
+  }
+}
+
+/* ===== RESPONSIVO CELULARES PEQUENOS (MENU LATERAL) ===== */
+@media (max-width: 480px) {
+
+  /* ===== BOTÃO HAMBURGUER ===== */
+  .hamburgerButton {
+    display: block;
+  }
+
+  /* Menu lateral fixo */
+  .MenuSuperior {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 70px 20px 20px 20px;
+    /* top padding para o hamburguer */
+    width: 240px;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease, background 0.3s ease;
+    z-index: 10000;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background: rgba(0, 0, 0, 0.8);
   }
 
   /* Sidebar ativa */
