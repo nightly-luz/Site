@@ -53,7 +53,7 @@ const ArquivoP = () => {
                 </p>
 
             </section>
-            <Rodape Rodape={Rodape}/>
+            <Rodape/>
         </div>
 
     )

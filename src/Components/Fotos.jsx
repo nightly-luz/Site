@@ -21,7 +21,7 @@ const Fotos = () => {
           </div>
         ))}
       </div>
-      <Rodape Rodape={Rodape}/>
+      <Rodape />
     </div>
   )
 }

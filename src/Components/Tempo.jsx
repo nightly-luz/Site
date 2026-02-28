@@ -85,7 +85,7 @@ const Tempo = () => {
       </p>
 
     <div className='rodapeCentro'>
-     <Rodape Rodape={Rodape}/>
+     <Rodape/>
     </div>
 </div>
   )

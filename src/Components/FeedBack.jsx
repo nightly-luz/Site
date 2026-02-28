@@ -44,7 +44,7 @@ const FeedBack = () => {
 
             {status && <p className="statusMsg">{status}</p>}
 
-            <Rodape Rodape={Rodape} />
+            <Rodape/>
         </div>
     )
 }
