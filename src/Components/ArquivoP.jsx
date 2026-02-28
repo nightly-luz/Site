@@ -17,7 +17,8 @@ const ArquivoP = () => {
 
             <section className="informacao">
                 <p>
-                    Oiii Mozinn, tô fazendo outro site para você pois te amo
+                    Oiii Mozinn, tô fazendo outro site para você pois você merece uwu.
+                    Quero que saiba que eu te amo
                     muito, saiba que estou muito feliz por ter te conhecido.
                     Você é a melhor coisa que já me aconteceu nesse mundo.
                 </p>
